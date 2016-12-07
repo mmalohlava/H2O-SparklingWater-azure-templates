@@ -50,9 +50,10 @@
         "description": "The Spark version to be installed on the cluster."
       },
       "allowedValues": [
-        "1.6"
+        "1.6",
+        "2.0"
       ],
-      "defaultValue": "1.6"
+      "defaultValue": "2.0"
     },
     "clusterHeadNodeCount": {
       "type": "int",
@@ -83,7 +84,7 @@
     },
     "clusterWorkerNodeCount": {
       "type": "int",
-      "defaultValue": 3,
+      "defaultValue": 2,
       "metadata": {
         "description": "The number of worker nodes in the HDInsight Spark cluster."
       }
@@ -239,7 +240,7 @@
               "scriptActions": [
                 {
                   "name": "headnode_installs",
-                  "uri": "https://raw.githubusercontent.com/pablomarin/SparklingWater-azure-template/master/headnode_installs.sh",
+                  "uri": "https://raw.githubusercontent.com/mmalohlava/H2O-SparklingWater-azure-templates/master/headnode_installs.sh",
                   "parameters": "[concat(parameters('clusterWorkerNodeCount'), ' ', parameters('sshUserName'))]"
                 }
               ]
@@ -263,7 +264,7 @@
               "scriptActions": [
                 {
                   "name": "worker_installs",
-                  "uri": "https://raw.githubusercontent.com/pablomarin/SparklingWater-azure-template/master/worker_installs.sh",
+                  "uri": "https://raw.githubusercontent.com/mmalohlava/H2O-SparklingWater-azure-templates/master/worker_installs.sh",
                   "parameters": ""
                 }
               ]
