@@ -16,7 +16,7 @@ wait
 /usr/bin/anaconda/bin/pip install -U scikit-learn
 
 # Adjust based on the build of H2O you want to download.
-version=1.6
+version=2.0
 SparklingBranch=rel-${version}
 
 echo "Fetching latest build number for branch ${SparklingBranch}..."
@@ -44,5 +44,6 @@ curl --silent -o 4_sentiment_sparkling.ipynb  "https://raw.githubusercontent.com
 curl --silent -o ChicagoCrimeDemo.ipynb  "https://raw.githubusercontent.com/pablomarin/H2O-SparklingWater-azure-templates/master/Notebooks/ChicagoCrimeDemo.ipynb"
 hdfs dfs -mkdir -p "/HdiNotebooks/H2O-PySparkling-Examples"
 hdfs dfs -put -f *.ipynb /HdiNotebooks/H2O-PySparkling-Examples/
+hdfs dfs -ls /
 
 echo "Success"
